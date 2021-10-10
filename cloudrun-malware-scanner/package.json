@@ -1,0 +1,19 @@
+{
+  "name": "clamav_appengine_flex_tutorial",
+  "version": "1.0.0",
+  "description": "Service to scan documents for the malware and move the analyzed documents to appropriate buckets",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Google Inc.",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@google-cloud/storage": "^2.4.2",
+    "body-parser": "^1.18.3",
+    "clamdjs": "^1.0.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  }
+}
