@@ -1,0 +1,36 @@
+name: "ESLint and NPM audit"
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analyze:
+    name: "Eslint-analyze"
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 21
+        check-latest: true
+
+    # Install eslint
+    - name: Install eslint
+      working-directory: cloudrun-malware-scanner/
+      run: npm install
+
+    - name: NPM Audit
+      working-directory: cloudrun-malware-scanner/
+      run: npm audit
+
+    - name: ESlint
+      working-directory: cloudrun-malware-scanner/
+      run: npm run eslint

@@ -1,0 +1,16 @@
+---
+updates:
+  - directory: "/"
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
+  - directory: "/cloudrun-malware-scanner"
+    package-ecosystem: "npm"
+    schedule:
+      interval: "daily"
+  - directory: "/cloudrun-malware-scanner"
+    package-ecosystem: "docker"
+    schedule:
+      interval: "daily"
+version: 2
+...
